@@ -1,0 +1,1 @@
+本项目对比了ATK和VASP计算Si（diamond）能带结果，先采用PBE关联函数，再用HSE06对带隙修正
