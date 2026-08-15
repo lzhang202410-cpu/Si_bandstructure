@@ -1,0 +1,16 @@
+# Set up lattice
+lattice = FaceCenteredCubic(5.4306*Angstrom)
+
+# Define elements
+elements = [Silicon, Silicon]
+
+# Define coordinates
+fractional_coordinates = [[ -0.125  ,  -0.125  ,-0.125 ],
+                          [ 0.125,  0.125,  0.125]]
+
+# Set up configuration
+bulk_configuration = BulkConfiguration(
+    bravais_lattice=lattice,
+    elements=elements,
+    fractional_coordinates=fractional_coordinates
+    )

@@ -1,0 +1,34 @@
+Global Parameters
+ISTART =  1           #(Read WAVECAR from scf_HSE step 1)
+ISPIN  =  1            #(Non-Spin polarised DFT)
+ICHARG =  11        #(Non-self-consistent: fix charge from scf_HSE CHGCAR)
+LREAL  = .FALSE.     #(Projection operators: automatic)
+ENCUT  =  400        #(Cut-off energy for plane wave basis set, in eV)
+PREC   =  Accurate   #(Precision level: Normal or Accurate, set Accurate when perform structure lattice relaxation calculation)
+LWAVE  = .TRUE.        #(Write WAVECAR or not)
+LCHARG = .TRUE.        #(Write CHGCAR or not)
+ADDGRID= .TRUE.        #(Increase grid, helps GGA convergence)
+
+Static Calculation
+ISMEAR =  0           #(gaussian smearing method)
+SIGMA  =  0.05        #(please check the width of the smearing)
+LORBIT =  11          #(PAW radii for projected DOS)
+# 不做离子步
+NSW    =  0           #(No ionic relaxation)
+IBRION = -1           #(No ionic update)
+
+# NEDOS  =  2001         (DOSCAR points)
+NELM   =  100          #(Max electronic SCF steps)
+EDIFF  =  1E-04        #(SCF energy convergence, in eV)
+ 
+HSE06 Calculation
+LHFCALC= .TRUE.       #(Activate HF)
+AEXX   =  0.25        #(25% HF exact exchange, adjusted this value to reproduce experimental band gap)
+HFSCREEN= 0.2         #(Switch to screened exchange, e.g. HSE06)
+ALGO   =  Normal          #(Recommended for HSE; use with ICHARG=11 for band structure,all 更通用)
+TIME   =  0.4         #(Timestep for IALGO5X)
+PRECFOCK= Fast        #(HF FFT grid; Fast is accurate enough for band structure)
+# NKRED is NOT compatible with mixed k-points (band path + IBZ), do NOT use here
+KPAR   =  2           #(The Para-caculation)
+#为得到更准确计算，可以设置更加严格的能量收敛标准，或者强制提高SCF步数
+NELMIN = 4        #(Force minimum 8 SCF steps for empty bands to converge)

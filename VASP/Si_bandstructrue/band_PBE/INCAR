@@ -1,0 +1,19 @@
+Global Parameters
+ISTART =  1            (Read existing wavefunction; from SCF)
+ISPIN  =  1            (Non-Spin polarised DFT)
+ICHARG =  11           (charge, Non-self-consistent: read charge density from CHGCAR)
+LREAL  = .FALSE.       (Projection operators: reciprocal space)
+ENCUT  =  400          (Cut-off energy for plane wave basis set, in eV)
+PREC   =  Accurate     (Precision level)
+LWAVE  = .TRUE.       (Do not write WAVECAR)
+LCHARG = .FALSE.       (Do not write CHGCAR)
+ADDGRID= .TRUE.        (Increase grid, helps GGA convergence)
+SIGMA  =  0.05
+#BandSturcture
+NSW    =  0            (No ionic relaxation)
+ISMEAR =  0            (Gaussian smearing; required for line-mode KPOINTS)
+IBRION = -1            (No ionic relaxation)
+NELM   =  60           (Max electronic steps)
+EDIFF  =  1E-06        (energy difference of two steps. Electronic convergence criterion, eV)
+LORBIT =  11           (Write PROCAR for projected band structure)
+

@@ -1,0 +1,28 @@
+Global Parameters
+ISTART =  1            #(Read WAVECAR from PBE Relaxation)
+ISPIN  =  1            #(Non-Spin polarised DFT)
+ICHARG =  1            #(Read CHGCAR from PBE Relaxation, then update)
+LREAL  = .FALSE.       #(Projection operators: reciprocal space)
+ENCUT  =  400          #(Cut-off energy for plane wave basis set, in eV)
+PREC   =  Accurate     #(Precision level)
+LWAVE  = .TRUE.        #(Write WAVECAR: needed for band_HSE step 2)
+LCHARG = .TRUE.        #(Write CHGCAR: needed for band_HSE step 2)
+ADDGRID= .TRUE.        #(Increase grid, helps GGA convergence)
+
+Static Calculation
+ISMEAR =  0            #(Gaussian smearing method)
+SIGMA  =  0.05         #(Width of the smearing)
+NSW    =  0            #(No ionic relaxation)
+IBRION = -1            #(No ionic update)
+NELM   =  100          #(Max electronic SCF steps)
+EDIFF  =  1E-05        #(SCF energy convergence, in eV; tighter than band step)
+
+HSE06 Calculation
+LHFCALC= .TRUE.        #(Activate HF exact exchange)
+AEXX   =  0.25         #(25% HF exact exchange, HSE06 default)
+HFSCREEN= 0.2          #(Screened exchange range-separation, HSE06)
+ALGO   =  All          #(Recommended for HSE SCF: more robust than DAMP)
+TIME   =  0.4          #(Timestep for IALGO5X)
+PRECFOCK= Fast         #(HF FFT grid; Fast is accurate enough)
+NKRED  =  2            #(Fock exchange k-point reduction: 8x8x8 -> 4x4x4)
+KPAR   =  2            #(K-point parallelisation)
